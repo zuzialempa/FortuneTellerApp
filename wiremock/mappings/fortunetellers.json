@@ -1,0 +1,14 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "/fortuneteller"
+            },
+            "response": {
+                "status": 200,
+                "bodyFileName": "fortunetellers.json"
+            }
+        }
+    ]
+}
