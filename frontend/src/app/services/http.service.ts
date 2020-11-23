@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FortuneTellerShort } from '../models/fortunetellerShort';
+import { FortuneTellerLong } from '../models/fortuneTellerLong';
 import { Observable, of } from 'rxjs';
-import { FT } from './mock';
+import { FT, FTLong } from './mock';
+
 const api = "http://localhost:8080";
 
 @Injectable({
@@ -11,17 +13,20 @@ const api = "http://localhost:8080";
 export class HttpService {
 
   private urls = {
-    fortuneTellers: "/fortuneteller"
+    fortuneTellers: "/fortuneteller",
+    fortuneTeller: "/fortuneteller"
   };
   constructor(private http: HttpClient) { }
 
   getFortuneTellers(): Observable<FortuneTellerShort[]> {
-    // getFortuneTellers(): Observable<FortuneTeller[]> {
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Acc-Type': 'application/json' })
-    };
+    // const httpOptions = {
+    //   headers: new HttpHeaders({ 'Acc-Type': 'application/json' })
+    // };
     // return this.http.get<FortuneTeller[]>(`${api}${this.urls.fortuneTellers}`, httpOptions);
     return of(FT);
+  }
 
+  getFortuneTeller(id: number): Observable<FortuneTellerLong|undefined> {
+    return of(FTLong.find((ft: any) => ft ? ft._id === id : 0));
   }
 }

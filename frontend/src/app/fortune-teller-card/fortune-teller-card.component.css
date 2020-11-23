@@ -10,3 +10,11 @@
 .ftCard {
     max-height: 400px;
 }
+
+.ftAvailable {
+    color: green;
+}
+
+.ftDisabled {
+    color: red;
+}

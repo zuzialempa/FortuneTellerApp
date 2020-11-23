@@ -7,12 +7,10 @@
     <mat-card-content>
         <img mat-card-image class="ftImg" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
             alt="Fortune Teller Photo">
+        <mat-icon [ngClass]="(fortuneTeller.available)?'ftAvailable':'ftDisabled'">stop_circle</mat-icon>
     </mat-card-content>
-    <mat-card-actions >
-        <button mat-button color="warm" (click)="onDetailsClick()">Details</button>
-        <button mat-icon-button color="warm" [disabled]=!fortuneTeller.available (click)="onWriteClick()">
-            <mat-icon>create</mat-icon> Write
-        </button>
+    <mat-card-actions>
+        <a class="btn" routerLink="/fortuneteller/{{fortuneTeller._id}}">Chose</a>
     </mat-card-actions>
 
 </mat-card>
