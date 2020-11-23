@@ -1,0 +1,9 @@
+<div class="ftGrid">
+  <mat-grid-list cols="2" rowHeights=400>
+    <mat-grid-tile *ngFor="let fortuneTeller of fortuneTellers" [colspan]="1" [rowspan]="1">
+      <div class="padding">
+        <fortune-teller-card [fortuneTeller]=fortuneTeller></fortune-teller-card>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,12 @@
+.ftGrid {
+    top: 400px;
+}
+
+.ftImg {
+    max-height: 200px;
+    max-width: auto;
+}
+
+.ftCard {
+    max-height: 400px;
+}
