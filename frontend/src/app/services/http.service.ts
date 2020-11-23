@@ -26,7 +26,8 @@ export class HttpService {
     return of(FT);
   }
 
-  getFortuneTeller(id: number): Observable<FortuneTellerLong|undefined> {
-    return of(FTLong.find((ft: any) => ft ? ft._id === id : 0));
+  getFortuneTeller(id: number): Observable<FortuneTellerLong> {
+    let ftTest = FTLong.find((ft: any) => ft ? ft._id === id : 0) ;
+    return of(ftTest);
   }
 }

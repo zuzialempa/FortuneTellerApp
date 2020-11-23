@@ -12,12 +12,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FortuneTellersComponent } from './fortuneTellers/fortunetellers.component';
 import { FortuneTellerCardComponent } from './fortune-teller-card/fortune-teller-card.component';
+import { FortuneTellerDetailsCardComponent } from './fortune-teller-details-card/fortune-teller-details-card.component';
+import { FortuneTellerDetailsComponent } from './fortune-teller-details/fortune-teller-details.component';
+import { ChatCardComponent } from './chat-card/chat-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FortuneTellersComponent,
     FortuneTellerCardComponent,
+    FortuneTellerDetailsCardComponent,
+    FortuneTellerDetailsComponent,
+    ChatCardComponent,
   ],
   imports: [
     BrowserModule,
