@@ -1,5 +1,5 @@
-import { FortuneTeller } from '../models/fortuneteller';
-export const FT: FortuneTeller[]=[
+import { FortuneTellerShort } from '../models/fortunetellerShort';
+export const FT: FortuneTellerShort[]=[
     {
       _id: 1,
       name: "Wróżka Sabrina",

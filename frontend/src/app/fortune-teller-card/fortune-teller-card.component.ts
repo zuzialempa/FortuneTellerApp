@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FortuneTeller } from '../models/fortuneteller';
+import { FortuneTellerShort } from '../models/fortunetellerShort';
 
 @Component({
   selector: 'fortune-teller-card',
@@ -12,7 +12,7 @@ export class FortuneTellerCardComponent implements OnInit {
     this.fortuneTeller = {_id: 0, name:"", available: false, descriptionShort: "", tags: [], image:""};
   }
   
-  @Input() fortuneTeller: FortuneTeller;
+  @Input() fortuneTeller: FortuneTellerShort;
 
   ngOnInit(): void {
 

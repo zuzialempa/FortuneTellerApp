@@ -1,4 +1,4 @@
-export interface FortuneTeller {
+export interface FortuneTellerShort {
     _id:number,
     name: string,
     available:boolean,

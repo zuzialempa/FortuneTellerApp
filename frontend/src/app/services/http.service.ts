@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { FortuneTeller } from '../models/fortuneteller';
+import { FortuneTellerShort } from '../models/fortunetellerShort';
 import { Observable, of } from 'rxjs';
 import { FT } from './mock';
 const api = "http://localhost:8080";
@@ -15,7 +15,7 @@ export class HttpService {
   };
   constructor(private http: HttpClient) { }
 
-  getFortuneTellers(): Observable<FortuneTeller[]> {
+  getFortuneTellers(): Observable<FortuneTellerShort[]> {
     // getFortuneTellers(): Observable<FortuneTeller[]> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Acc-Type': 'application/json' })
