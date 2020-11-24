@@ -15,6 +15,7 @@ import { FortuneTellerCardComponent } from './fortune-teller-card/fortune-teller
 import { FortuneTellerDetailsCardComponent } from './fortune-teller-details-card/fortune-teller-details-card.component';
 import { FortuneTellerDetailsComponent } from './fortune-teller-details/fortune-teller-details.component';
 import { ChatCardComponent } from './chat-card/chat-card.component';
+import { MapPageComponent } from './map-page/map-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ChatCardComponent } from './chat-card/chat-card.component';
     FortuneTellerDetailsCardComponent,
     FortuneTellerDetailsComponent,
     ChatCardComponent,
+    MapPageComponent,
   ],
   imports: [
     BrowserModule,
