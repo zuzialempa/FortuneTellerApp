@@ -1,0 +1,16 @@
+<mat-card class="ftCard">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{fortuneTeller.name}}</mat-card-title>
+        <mat-card-subtitle>{{fortuneTeller.descriptionShort}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <img mat-card-image class="ftImg" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Fortune Teller Photo">
+        <mat-icon [ngClass]="(fortuneTeller.available)?'ftAvailable':'ftDisabled'">stop_circle</mat-icon>
+    </mat-card-content>
+    <mat-card-actions>
+        <a class="btn" routerLink="/fortuneteller/{{fortuneTeller._id}}">Chose</a>
+    </mat-card-actions>
+
+</mat-card>

@@ -1,0 +1,8 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.topBar {
+  position: sticky;
+  top:0px;
+  z-index: 100;
+}

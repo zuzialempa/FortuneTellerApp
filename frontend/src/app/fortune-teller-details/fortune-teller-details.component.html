@@ -1,0 +1,19 @@
+<p></p>
+<div class="ftGrid">
+    <mat-grid-list cols="2">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <fortune-teller-details-card [fortuneTeller]=fortuneTeller></fortune-teller-details-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <chat-card></chat-card>
+
+            <!-- <ng-template *ngIf="fortuneTeller.available === true">
+                <p>wróżka wolna i powinno działać</p>
+                <chat-card></chat-card>
+            </ng-template>
+            <ng-template *ngIf="fortuneTeller.available === false">
+                <p>Wróżka zajęta, spróbuj później</p>
+            </ng-template> -->
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
