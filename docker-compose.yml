@@ -5,8 +5,7 @@ services:
     image: mongo
     ports: 
       - 27017:27017
+    expose:
+     - 27017
     volumes: 
       - ./database:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: examples

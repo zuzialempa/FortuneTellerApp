@@ -47,4 +47,4 @@ frontend/.DS_Store
 frontend/Thumbs.db
 
 # Backend
-backend/backend/__pychache__/
+backend/**/__pycache__/
