@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FortuneTellerShort } from '../models/fortunetellerShort';
+import { FortuneTeller } from '../models/fortuneTeller';
 import { FortuneTellerService } from '../services/fortune-teller.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { FortuneTellerService } from '../services/fortune-teller.service';
   styleUrls: ['./fortunetellers.component.css']
 })
 export class FortuneTellersComponent implements OnInit {
-  fortuneTellers: FortuneTellerShort[];
+  fortuneTellers: FortuneTeller[];
 
   constructor(private ftService: FortuneTellerService) { 
     this.fortuneTellers = [];

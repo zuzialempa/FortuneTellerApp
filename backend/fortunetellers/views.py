@@ -7,10 +7,10 @@ from .mongoHelper import getFortuneTellers, getFortuneTeller
 
 
 def list(request):
+    print("list")
     fortuneTellers = getFortuneTellers()
     ftList = []
     for ft in fortuneTellers:
-        print(ft['_id'])
         ft['id'] = str(ft['_id'])
         del ft['_id']
         ftList.append(ft)
@@ -18,8 +18,8 @@ def list(request):
 
 
 def specific(request, id):
+    print("one fortune teller")
     ft = getFortuneTeller(id)
-    print(ft['_id'])
     ft['id'] = str(ft['_id'])
     del ft['_id']
     return JsonResponse(ft)

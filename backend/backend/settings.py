@@ -24,6 +24,7 @@ SECRET_KEY = '9+86c6%2$gfho(9c()6!zo3xn$@eo1&p)9(nc&pw7tftb4!ggq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = []
 
@@ -39,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'channels',
-    'fortunetellers'
+    'fortunetellers',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

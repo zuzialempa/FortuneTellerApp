@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FortuneTellerService } from '../services/fortune-teller.service';
-import { FortuneTellerLong } from '../models/fortuneTellerLong';
+import { FortuneTeller } from '../models/fortuneTeller';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,14 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FortuneTellerDetailsComponent implements OnInit {
 
-  fortuneTeller: FortuneTellerLong;
+  fortuneTeller: FortuneTeller;
 
   constructor(
     private route: ActivatedRoute,
     private ftService: FortuneTellerService
     ) { 
     this.fortuneTeller = {
-      _id: 0,
+      id: 0,
       name: "",
       available: false,
       descriptionShort: "",
@@ -32,10 +32,7 @@ export class FortuneTellerDetailsComponent implements OnInit {
   }
 
   getFortuneTeller(): void {
-    let id = +this.route.snapshot.paramMap.get('id');
-    if(id === null) {
-      id = 0
-    }
+    let id = this.route.snapshot.paramMap.get('id');
     this.ftService.getFortuneTeller(id)
       .subscribe(ft =>{ 
         console.log("ft")
