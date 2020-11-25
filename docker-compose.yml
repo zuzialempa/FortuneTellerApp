@@ -9,10 +9,4 @@ services:
       - ./database:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-  wiremock:
-    image: rodolpheche/wiremock
-    ports:
-      - 8080:8080
-    volumes:
-      - ./wiremock:/home/wiremock
+      MONGO_INITDB_ROOT_PASSWORD: examples
