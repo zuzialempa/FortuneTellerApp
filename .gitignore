@@ -45,3 +45,6 @@ frontend/typings
 # System Files
 frontend/.DS_Store
 frontend/Thumbs.db
+
+# Backend
+backend/backend/__pychache__/
