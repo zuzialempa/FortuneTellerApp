@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,8 @@ import { FortuneTellerDetailsCardComponent } from './fortune-teller-details-card
 import { FortuneTellerDetailsComponent } from './fortune-teller-details/fortune-teller-details.component';
 import { ChatCardComponent } from './chat-card/chat-card.component';
 import { MapPageComponent } from './map-page/map-page.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -35,7 +39,10 @@ import { MapPageComponent } from './map-page/map-page.component';
     MatGridListModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatListModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

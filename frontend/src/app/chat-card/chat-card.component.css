@@ -1,0 +1,11 @@
+.full{
+    width: 100%;
+}
+
+.chat-author {
+    color: grey;
+}
+
+.chat-msg {
+    /* color: red; */
+}

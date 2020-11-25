@@ -32,7 +32,10 @@ export class FortuneTellerDetailsComponent implements OnInit {
   }
 
   getFortuneTeller(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    let id = +this.route.snapshot.paramMap.get('id');
+    if(id === null) {
+      id = 0
+    }
     this.ftService.getFortuneTeller(id)
       .subscribe(ft =>{ 
         console.log("ft")
