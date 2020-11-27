@@ -1,0 +1,21 @@
+<p>login-page works!</p>
+<mat-card class="loginCard">
+    <mat-card-header>
+        <div>Tutaj możesz się zalogować, droga koleżanko</div>
+    </mat-card-header>
+    <mat-card-subtitle *ngIf="showNotLogged === true">
+        Coś źle podałaś koleżanko. Spróbuj jeszcze raz.
+    </mat-card-subtitle>
+    <mat-card-content class="loginCardContent">
+        <div class="fullItem">
+            <input class="fullItem" placeholder="Login" name="login" type="text" matInput #login />
+        </div>
+        <div class="fullItem">
+            <input class="fullItem" placeholder="Password" name="password" type="password" matInput #password />
+        </div>
+        <button id="basic" type="button" mat-button (click)="loginUser()" class="fullItem">
+            login
+        </button>
+    </mat-card-content>
+
+</mat-card>

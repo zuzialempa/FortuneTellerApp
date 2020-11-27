@@ -6,6 +6,9 @@
   </button>
   <span>Wróżka Online</span>
   <span class="example-spacer"></span>
+  <button mat-button color="secondary" *ngIf="isFT===true" class="small" (click)="logout()">
+    Wyloguj się, wróżko
+  </button>
   <button mat-icon-button color="secondary">
     <a href="./map" mat-icon>
       <mat-icon aria-hidden="false" color="secondary">map</mat-icon>

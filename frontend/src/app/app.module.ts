@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service'
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -18,8 +19,8 @@ import { FortuneTellerDetailsCardComponent } from './fortune-teller-details-card
 import { FortuneTellerDetailsComponent } from './fortune-teller-details/fortune-teller-details.component';
 import { ChatCardComponent } from './chat-card/chat-card.component';
 import { MapPageComponent } from './map-page/map-page.component';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
+import { LoginPageComponent } from './login-page/login-page.component';
+// const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     FortuneTellerDetailsComponent,
     ChatCardComponent,
     MapPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +44,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     MatButtonModule,
     MatInputModule,
     MatListModule,
-    SocketIoModule.forRoot(config)
+    // SocketIoModule.forRoot(config)
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
