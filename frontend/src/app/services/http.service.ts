@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FortuneTeller } from '../models/fortuneTeller';
 import { Observable, of } from 'rxjs';
-import { FTLong } from './mock';
 
 const api = "http://localhost:8000";
 
@@ -13,6 +12,7 @@ export class HttpService {
 
   private urls = {
     fortuneTellers: "/fortuneteller",
+    login: "/fortuneteller/test/login",
   };
   constructor(private http: HttpClient) { }
 
@@ -22,5 +22,9 @@ export class HttpService {
 
   getFortuneTeller(id: string): Observable<FortuneTeller> {
     return this.http.get<FortuneTeller>(`${api}${this.urls.fortuneTellers}/${id}`);
+  }
+
+  login(login: string, password: string): Observable<any> {
+    return this.http.post(`${api}${this.urls.login}`, { login, password });
   }
 }

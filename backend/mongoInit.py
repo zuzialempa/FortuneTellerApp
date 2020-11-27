@@ -10,7 +10,26 @@ fortuneTellersSamples = [
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "kariera", "rodzina"],
-        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg"
+        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "authData": {
+            "password":"test",
+            "login": "Sabrinka"
+        },
+        "chats":[
+            {
+                "userId": "11",
+                "messages": [
+                    {
+                        "message": "test test test",
+                        "author": "Wróżka Sabrina"
+                    },
+                    {
+                        "message": "test test test",
+                        "author": "User"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Wróżka Gabriela",
@@ -18,7 +37,12 @@ fortuneTellersSamples = [
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "rodzina"],
-        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg"
+        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "authData": {
+            "password":"test",
+            "login": "Gabi"
+        },
+        "chats":[]
     },
     {
         "name": "Wróżka Sabrina",
@@ -26,15 +50,25 @@ fortuneTellersSamples = [
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "kariera", "rodzina"],
-        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg"
+        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "authData": {
+            "password":"test",
+            "login": "Sabi"
+        },
+        "chats":[]
     },
     {
-        "name": "Wróżka Gabriela",
+        "name": "Wróżka Gabriela2",
         "available": False,
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "rodzina"],
-        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg"
+        "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "authData": {
+            "password":"test",
+            "login": "Gabus"
+        },
+        "chats":[]
     }
 ]
 

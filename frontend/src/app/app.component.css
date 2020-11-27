@@ -6,3 +6,6 @@
   top:0px;
   z-index: 100;
 }
+.small {
+  font-size:small;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChatMessage } from '../models/chatMessage';
-import { FormControl } from '@angular/forms';
-import { Socket } from 'ngx-socket-io';
+// import { FormControl } from '@angular/forms';
+// import { Socket } from 'ngx-socket-io';
 import { Observable, of } from 'rxjs';
 
 @Component({
@@ -10,26 +10,26 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./chat-card.component.css']
 })
 export class ChatCardComponent implements OnInit {
-  messageController = new FormControl('');
+  // messageController = new FormControl('');
   messages: ChatMessage[] = [{
     author: "test",
     message: "eqgafgaggfhrtjedeafva",
-    chatId: 1
   }];
   chatId = 1;
   author = "test";
   @ViewChild('message') inputName: any;
-  constructor(private socket: Socket) {
+  constructor() {
+    // constructor(private socket: Socket) {
   }
 
   ngOnInit(): void {
   }
   public getMessages = () => {
     return new Observable((observer) => {
-      this.socket.on(`newMessage_${this.chatId}`, (message) => {
-        console.log(message)
-        observer.next(message);
-      });
+      // this.socket.on(`newMessage_${this.chatId}`, (message) => {
+      //   console.log(message)
+      //   observer.next(message);
+      // });
     });
   }
   
@@ -40,7 +40,7 @@ export class ChatCardComponent implements OnInit {
       chatId:this.chatId
     }
     this.messages.push(newMessage)
-    this.socket.emit(`newMessage_${this.chatId}`, newMessage);
+    // this.socket.emit(`newMessage_${this.chatId}`, newMessage);
     this.inputName.nativeElement.value = '';
   }
 }

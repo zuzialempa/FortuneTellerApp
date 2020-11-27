@@ -14,10 +14,13 @@ export class FortuneTellerService {
     console.log("getFortuneTellers ")
     return this.httpService.getFortuneTellers();
   }
-  
+
   getFortuneTeller(id: string): Observable<FortuneTeller> {
     console.log("getFortuneTeller ")
     return this.httpService.getFortuneTeller(id);
+  }
+  login(login: string, password: string): Observable<any> {
+    return this.httpService.login(login, password)
   }
 
 }
