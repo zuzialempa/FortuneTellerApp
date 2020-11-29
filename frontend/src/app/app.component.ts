@@ -17,7 +17,6 @@ export class AppComponent {
   
   logout() {
     this.cookieService.delete("fortuneTeller");
-    console.log("xxx", this.cookieService.get("fortuneTeller"))
     this.isFT = false;
   }
 }

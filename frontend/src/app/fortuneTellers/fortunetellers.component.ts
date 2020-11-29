@@ -22,8 +22,7 @@ export class FortuneTellersComponent implements OnInit {
   getFortuneTellers(): void {
     this.ftService.getFortuneTellers()
       .subscribe(ft =>{ 
-        console.log("ft")
-        console.log(ft)
+        console.log("ft - ",ft)
         this.fortuneTellers = ft
       });
   }
