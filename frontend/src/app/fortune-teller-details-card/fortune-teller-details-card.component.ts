@@ -9,7 +9,7 @@ import { FortuneTeller } from '../models/fortuneTeller';
 export class FortuneTellerDetailsCardComponent implements OnInit {
   
   constructor() { 
-    this.fortuneTeller = {id: 0, name:"", available: false, descriptionShort: "", descriptionLong: "", tags: [], image:""};
+    this.fortuneTeller = {id: "0", name:"", available: false, descriptionShort: "", descriptionLong: "", tags: [], image:""};
   }
   
   @Input() fortuneTeller: FortuneTeller;

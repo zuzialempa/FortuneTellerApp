@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -48,6 +49,7 @@ import { FortuneTellerDashboardComponent } from './fortune-teller-dashboard/fort
     MatButtonModule,
     MatInputModule,
     MatListModule,
+    BrowserAnimationsModule
     // SocketIoModule.forRoot(config)
   ],
   providers: [CookieService],

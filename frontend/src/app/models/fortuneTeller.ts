@@ -1,5 +1,5 @@
 export interface FortuneTeller {
-    id:number,
+    id:string,
     name: string,
     available:boolean,
     descriptionShort: string,

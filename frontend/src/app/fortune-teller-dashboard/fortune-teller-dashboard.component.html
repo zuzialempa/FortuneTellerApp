@@ -1,1 +1,5 @@
-<p>fortune-teller-dashboard works!</p>
+<mat-grid-list cols="2">
+    <mat-grid-tile *ngFor="let chat of chats"  [colspan]="1" [rowspan]="1">
+        <chat-card [chat]="chat"></chat-card>
+    </mat-grid-tile>
+</mat-grid-list>

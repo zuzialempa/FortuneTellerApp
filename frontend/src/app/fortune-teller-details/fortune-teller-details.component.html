@@ -5,15 +5,18 @@
             <fortune-teller-details-card [fortuneTeller]=fortuneTeller></fortune-teller-details-card>
         </mat-grid-tile>
         <mat-grid-tile>
-            <chat-card></chat-card>
+            <chat-card [chat]=chat *ngIf="chatActive === true"></chat-card>
 
-            <!-- <ng-template *ngIf="fortuneTeller.available === true">
-                <p>wróżka wolna i powinno działać</p>
-                <chat-card></chat-card>
-            </ng-template>
-            <ng-template *ngIf="fortuneTeller.available === false">
-                <p>Wróżka zajęta, spróbuj później</p>
-            </ng-template> -->
+            <mat-card class="chat" *ngIf="chatActive === false">
+                <mat-card-header>
+                    <mat-card-title>Porozmawiaj z wróżką</mat-card-title>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button id="basic" type="button" mat-button (click)="activateChat()">
+                        Zacznij rozmowe
+                    </button>
+                </mat-card-actions>
+            </mat-card>
         </mat-grid-tile>
     </mat-grid-list>
 </div>
