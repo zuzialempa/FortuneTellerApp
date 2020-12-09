@@ -23,7 +23,6 @@ import { MapPageComponent } from './map-page/map-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { FortuneTellerDashboardComponent } from './fortune-teller-dashboard/fortune-teller-dashboard.component';
-// const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -49,8 +48,7 @@ import { FortuneTellerDashboardComponent } from './fortune-teller-dashboard/fort
     MatButtonModule,
     MatInputModule,
     MatListModule,
-    BrowserAnimationsModule
-    // SocketIoModule.forRoot(config)
+    BrowserAnimationsModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

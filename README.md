@@ -11,9 +11,17 @@ Konfiguracja:
 ## Backend
 
 Libraries:
-- ```python -m pip install -U channels```
-- ```python -m pip install django```
-- ```python -m pip install pymongo```
+```
+python -m pip install -U channels django pymongo channels_redis django-cors-headers
+```
 
 Run server
 ```python manage.py runserver 8000```
+Databases
+
+<!-- Redis jest wykorzystywany przez channels -->
+```docker run -p 6379:6379 -d redis:5```
+<!-- W mongo sa składowane dane -->
+```docker run -p 27017:27017 -d mongo```
+
+Or use docker-compose tool, by calling `docker-compose up -d` in root directory of this project.

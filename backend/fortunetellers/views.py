@@ -6,7 +6,6 @@ from bson.objectid import ObjectId
 from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
 from .mongoHelper import getFortuneTellers, getFortuneTeller, checkUser
 
-
 def list(request):
     print("list")
     fortuneTellers = getFortuneTellers()
@@ -16,7 +15,6 @@ def list(request):
         del ft['_id']
         ftList.append(ft)
     return JsonResponse(ftList, safe=False)
-
 
 def specific(request, id):
     print("one fortune teller")
@@ -33,4 +31,3 @@ def login(request):
         return JsonResponse({"id":str(logged['id'])})
     else:
         return HttpResponseForbidden()
-

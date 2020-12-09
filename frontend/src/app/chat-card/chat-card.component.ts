@@ -1,10 +1,6 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ChatMessage } from '../models/chatMessage';
-// import { FormControl } from '@angular/forms';
-// import { Socket } from 'ngx-socket-io';
 import { Observable, of } from 'rxjs';
-import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
 import { Chat } from '../models/chat';
 import { FormControl } from '@angular/forms';
 
@@ -19,40 +15,38 @@ export class ChatCardComponent implements OnInit {
   @Input() ftId: string;
   @Input() chat: Chat;
   messages: ChatMessage[];
+  chatSocket: WebSocket;
 
   constructor() {
-    console.log("aaaaa", this.chat)
     this.chat = {
       userId: "0",
       ftId: "0",
       messages: []
     }
-    // constructor(private socket: Socket) {
-    // const userId = this.cookieService.get(this.router.url.split("/")[2]); //because ftId is not initialized yet
-    // this.chatActive = userId !== undefined && userId !== '';
   }
-
+  
   ngOnInit(): void {
-    console.log("bbb", this.chat)
+    console.log("CHAT ID - ", `${this.chat.ftId}_${this.chat.userId}`)
+    this.chatSocket = new WebSocket(`ws://localhost:8000/ws/chat/${this.chat.ftId}_${this.chat.userId}/`);
+    this.chatSocket.onmessage = (e) => {
+      const {message} = JSON.parse(e.data);
+      console.log("NEW MESS - ", message)
+      this.chat.messages.push(message)
+    };
+  
+    this.chatSocket.onclose = function (e) {
+      console.error('Chat socket closed unexpectedly');
+    };
     this.messages = this.chat.messages;
   }
 
-  public getMessages = () => {
-    return new Observable((observer) => {
-      // this.socket.on(`newMessage_${this.chatId}`, (message) => {
-      //   console.log(message)
-      //   observer.next(message);
-      // });
-    });
-  }
   sendMessage() {
-    console.log("newmes - ", this.message.nativeElement.value)
     const newMessage = {
       message: this.message.nativeElement.value,
       author: "ty",
     }
-    this.chat.messages.push(newMessage)
-    // this.socket.emit(`newMessage_${this.chatId}`, newMessage);
+    console.log("SEND MESSAGE - ", JSON.stringify(newMessage))
     this.message.nativeElement.value = '';
+    this.chatSocket.send(JSON.stringify(newMessage));
   }
 }

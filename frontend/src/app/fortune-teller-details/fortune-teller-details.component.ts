@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FortuneTellerService } from '../services/fortune-teller.service';
-import { FortuneTeller } from '../models/fortuneTeller';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import * as uuid from 'uuid';
+import * as short_uuid from 'short-uuid';
 import { Chat } from '../models/chat';
 
 @Component({
@@ -56,7 +54,7 @@ export class FortuneTellerDetailsComponent implements OnInit {
       });
   }
   activateChat() {
-    const userId = uuid.v4();
+    const userId = short_uuid.generate();
     this.chat.userId = userId;
     this.cookieService.set(this.fortuneTeller.id, userId);
     this.chatActive = true;
