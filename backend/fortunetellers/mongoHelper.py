@@ -10,7 +10,6 @@ db = client.fortuneTellersApp
 def getFortuneTellers():
     result = list(db.reviews.find({}, {
         "name": 1,
-        "available": 1,
         "descriptionShort": 1,
         "descriptionLong": 1,
         "tags": 1,
@@ -23,7 +22,6 @@ def getFortuneTellers():
 def getFortuneTeller(id):
     result = db.reviews.find_one({"_id": ObjectId(id)}, {
         "name": 1,
-        "available": 1,
         "descriptionShort": 1,
         "descriptionLong": 1,
         "tags": 1,

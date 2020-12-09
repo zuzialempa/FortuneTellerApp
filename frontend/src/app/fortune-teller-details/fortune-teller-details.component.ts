@@ -16,7 +16,6 @@ export class FortuneTellerDetailsComponent implements OnInit {
   fortuneTeller = {
     id: "0",
     name: "",
-    available: false,
     descriptionShort: "",
     descriptionLong: "",
     tags: [],

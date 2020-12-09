@@ -6,7 +6,6 @@ db = client.fortuneTellersApp
 fortuneTellersSamples = [
     {
         "name": "Wróżka Sabrina",
-        "available": True,
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "kariera", "rodzina"],
@@ -33,7 +32,6 @@ fortuneTellersSamples = [
     },
     {
         "name": "Wróżka Gabriela",
-        "available": False,
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "rodzina"],
@@ -46,7 +44,6 @@ fortuneTellersSamples = [
     },
     {
         "name": "Wróżka Sabrina",
-        "available": True,
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "kariera", "rodzina"],
@@ -59,7 +56,6 @@ fortuneTellersSamples = [
     },
     {
         "name": "Wróżka Gabriela2",
-        "available": False,
         "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
         "tags": ["miłość", "rodzina"],
