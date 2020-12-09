@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Chat } from '../models/chat';
 const testchat =  {
   userId: "1",
@@ -18,13 +19,28 @@ const testchat =  {
 export class FortuneTellerDashboardComponent implements OnInit {
 
   chats: Chat[];
-  constructor() {
-    this.chats = [testchat, testchat, testchat];
-    console.log(this.chats.length)
+  chatSocket: WebSocket;
+  ftId: string;
+  constructor(private cookieService: CookieService) {
+    this.chats = [testchat];
+    this.ftId = this.cookieService.get("fortuneTeller")
   }
 
 
   ngOnInit(): void {
+    this.chatSocket = new WebSocket(`ws://localhost:8000/ws/chat/${this.ftId}/`);
+    this.chatSocket.onmessage = (e) => {
+      const { message } = JSON.parse(e.data);
+      const item = this.chats.find(i => i.userId === message.userId);
+      if (!item) {
+        message.author="on"
+        this.chats.push({
+          ftId: this.ftId,
+          userId: message.userId,
+          messages: [message]
+        })
+      }
+    };
   }
 
 }

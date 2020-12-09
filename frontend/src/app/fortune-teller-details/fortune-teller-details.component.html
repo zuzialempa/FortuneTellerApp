@@ -5,7 +5,7 @@
             <fortune-teller-details-card [fortuneTeller]=fortuneTeller></fortune-teller-details-card>
         </mat-grid-tile>
         <mat-grid-tile>
-            <chat-card [chat]=chat *ngIf="chatActive === true"></chat-card>
+            <chat-card [chat]=chat *ngIf="chatActive === true" [isFT]='false'></chat-card>
 
             <mat-card class="chat" *ngIf="chatActive === false">
                 <mat-card-header>

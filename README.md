@@ -2,22 +2,24 @@
 
 ## FrontEnd from angular
 
-Uruchomienie aplikacji:
+### Uruchomienie aplikacji:
 1. instalacja zależności ```npm i```
 2. uruchomienie ```ng serve```
 
-Konfiguracja:
+### Konfiguracja:
+????
 
 ## Backend
 
-Libraries:
+### Libraries:
 ```
-python -m pip install -U channels django pymongo channels_redis django-cors-headers
+python -m pip install -U channels django pymongo channels_redis django-cors-headers channels_redis
 ```
 
-Run server
+### Run server
 ```python manage.py runserver 8000```
-Databases
+
+### Databases
 
 <!-- Redis jest wykorzystywany przez channels -->
 ```docker run -p 6379:6379 -d redis:5```
