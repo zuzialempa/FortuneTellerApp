@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { ChatMessage } from '../models/chatMessage';
 import { Chat } from '../models/chat';
 import { FormControl } from '@angular/forms';
 
@@ -13,7 +12,6 @@ export class ChatCardComponent implements OnInit {
   @ViewChild('message') message: any;
   @Input() isFT: boolean;
   @Input() chat: Chat;
-  messages: ChatMessage[];
   chatSocket: WebSocket;
 
   constructor() {
@@ -25,7 +23,6 @@ export class ChatCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("CHAT ID - ", `${this.chat.ftId}_${this.chat.userId}`)
     this.chatSocket = new WebSocket(`ws://localhost:8000/ws/chat/${this.chat.ftId}/`);
     this.chatSocket.onmessage = (e) => {
       const { message } = JSON.parse(e.data);
@@ -44,7 +41,6 @@ export class ChatCardComponent implements OnInit {
     this.chatSocket.onclose = function (e) {
       console.error('Chat socket closed unexpectedly');
     };
-    this.messages = this.chat.messages;
   }
 
   sendMessage() {
@@ -53,7 +49,7 @@ export class ChatCardComponent implements OnInit {
       author: this.isFT ? this.chat.ftId : this.chat.userId,
       userId: this.chat.userId
     }
-    console.log("SEND MESSAGE - ", JSON.stringify(newMessage))
+    console.log("SEND MESSAGE - ", newMessage)
     this.message.nativeElement.value = '';
     this.chatSocket.send(JSON.stringify(newMessage));
   }

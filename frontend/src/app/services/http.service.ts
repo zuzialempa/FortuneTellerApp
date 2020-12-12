@@ -13,6 +13,7 @@ export class HttpService {
   private urls = {
     fortuneTellers: "/fortuneteller",
     login: "/fortuneteller/test/login",
+    chat: "/chat",
   };
   constructor(private http: HttpClient) { }
 
@@ -26,5 +27,13 @@ export class HttpService {
 
   login(login: string, password: string): Observable<any> {
     return this.http.post(`${api}${this.urls.login}`, { login, password });
+  }
+
+  getChat(ftId: string, userId: string): Observable<any> {
+    return this.http.get(`${api}${this.urls.chat}/${ftId}/${userId}`);
+  }
+
+  getChats(ftId: string): Observable<any> {
+    return this.http.get(`${api}${this.urls.chat}/${ftId}`);
   }
 }

@@ -2,11 +2,11 @@
 
 ## FrontEnd from angular
 
-### Uruchomienie aplikacji:
-1. instalacja zależności ```npm i```
-2. uruchomienie ```ng serve```
+### Run frontend app:
+1. Install dependencies with ```npm i```
+2. Run application ```ng serve```
 
-### Konfiguracja:
+### Configuration:
 ????
 
 ## Backend

@@ -11,24 +11,9 @@ fortuneTellersSamples = [
         "tags": ["miłość", "kariera", "rodzina"],
         "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
         "authData": {
-            "password":"test",
+            "password": "test",
             "login": "Sabrinka"
-        },
-        "chats":[
-            {
-                "userId": "11",
-                "messages": [
-                    {
-                        "message": "test test test",
-                        "author": "Wróżka Sabrina"
-                    },
-                    {
-                        "message": "test test test",
-                        "author": "User"
-                    }
-                ]
-            }
-        ]
+        }
     },
     {
         "name": "Wróżka Gabriela",
@@ -37,10 +22,9 @@ fortuneTellersSamples = [
         "tags": ["miłość", "rodzina"],
         "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
         "authData": {
-            "password":"test",
+            "password": "test",
             "login": "Gabi"
-        },
-        "chats":[]
+        }
     },
     {
         "name": "Wróżka Sabrina",
@@ -49,10 +33,9 @@ fortuneTellersSamples = [
         "tags": ["miłość", "kariera", "rodzina"],
         "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
         "authData": {
-            "password":"test",
+            "password": "test",
             "login": "Sabi"
-        },
-        "chats":[]
+        }
     },
     {
         "name": "Wróżka Gabriela2",
@@ -61,15 +44,35 @@ fortuneTellersSamples = [
         "tags": ["miłość", "rodzina"],
         "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
         "authData": {
-            "password":"test",
+            "password": "test",
             "login": "Gabus"
-        },
-        "chats":[]
+        }
     }
 ]
 
-result = db.reviews.insert_many(fortuneTellersSamples)
+result = db.fortuneTellers.insert_many(fortuneTellersSamples)
 print(result)
 
-result = list(db.reviews.find())
+result = list(db.fortuneTellers.find())
 print(result)
+
+# chats
+# db.chats
+chats = [
+    {
+        "userId": "11",
+        "ftId": "",
+        "messages": [
+            {
+                "message": "test test test",
+                "author": "Wróżka Sabrina"
+            },
+            {
+                "message": "test test test",
+                "author": "User"
+            }
+        ]
+    }
+]
+result = db.chats.insert_many(chats)
+

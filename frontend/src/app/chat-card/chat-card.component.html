@@ -1,18 +1,20 @@
-<mat-card class="chat">
+<mat-card class="chatCard">
     <mat-card-header>
         <mat-card-title>Rozmawiasz z wróżką</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <mat-list>
-            <mat-list-item *ngFor="let message of messages">
-                <span class="chat-author">{{message.author}}</span>
-                :&nbsp;&nbsp;&nbsp;
-                <span class="chat-msg">{{message.message}}</span>
-            </mat-list-item>
-        </mat-list>
+        <div class="scrollable">
+            <mat-list>
+                <mat-list-item *ngFor="let message of chat.messages">
+                    <span class="chat-author">{{message.author}}</span>
+                    :&nbsp;&nbsp;&nbsp;
+                    <span class="chat-msg">{{message.message}}</span>
+                </mat-list-item>
+            </mat-list>
+        </div>
     </mat-card-content>
-    <mat-card-actions>
-        <mat-form-field>
+    <mat-card-actions >
+        <mat-form-field class="form">
             <mat-label>Napisz wiadomość</mat-label>
             <input name="message" type="text" matInput #message>
             <button mat-icon-button color="secondary" (click)="sendMessage()">

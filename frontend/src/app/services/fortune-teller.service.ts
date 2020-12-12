@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { FortuneTeller } from '../models/fortuneTeller';
 import { HttpService } from './http.service';
@@ -22,5 +22,12 @@ export class FortuneTellerService {
   login(login: string, password: string): Observable<any> {
     return this.httpService.login(login, password)
   }
+  
+  getChat(ftId: string, userId: string): Observable<any> {
+    return this.httpService.getChat(ftId, userId)
+  }
 
+  getChats(ftId: string): Observable<any> {
+    return this.httpService.getChats(ftId)
+  }
 }

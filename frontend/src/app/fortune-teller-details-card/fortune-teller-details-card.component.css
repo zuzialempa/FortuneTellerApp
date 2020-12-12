@@ -1,12 +1,11 @@
-.ftGrid {
-    top: 400px;
-}
-
 .ftImg {
-    max-height: 200px;
+    margin: 1%;
+    padding: 2%;
     max-width: auto;
 }
 
 .ftCard {
-    max-height: 400px;
+    margin: 1%;
+    margin-top: 5%;
+    margin-bottom:2%;
 }

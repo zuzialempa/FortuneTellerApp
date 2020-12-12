@@ -8,7 +8,7 @@ db = client.fortuneTellersApp
 
 
 def getFortuneTellers():
-    result = list(db.reviews.find({}, {
+    result = list(db.fortuneTellers.find({}, {
         "name": 1,
         "descriptionShort": 1,
         "descriptionLong": 1,
@@ -20,7 +20,7 @@ def getFortuneTellers():
 
 
 def getFortuneTeller(id):
-    result = db.reviews.find_one({"_id": ObjectId(id)}, {
+    result = db.fortuneTellers.find_one({"_id": ObjectId(id)}, {
         "name": 1,
         "descriptionShort": 1,
         "descriptionLong": 1,
@@ -29,20 +29,17 @@ def getFortuneTeller(id):
     })
     return result
 
-
 def getChats(ftId, userId):
-    result = db.reviews.find_one({
-        "_id": ObjectId(ftId),
-        "chats": {
-            "$elemMatch": {"userId": userId}
-        }
-    }, { "chats" })
+    result = db.chats.find_one({
+        "ftId": ftId,
+        "userId": userId,
+    }, { "messages" })
     return result
 
 def checkUser(authData):
     data = json.loads(authData)
     print(data)
-    result = db.reviews.find_one(
+    result = db.fortuneTellers.find_one(
         {
             "authData.password": data['password'], 
             "authData.login": data['login']

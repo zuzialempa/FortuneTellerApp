@@ -1,14 +1,27 @@
-.chat {
-    width: 100%;
+.chatCard {
+    width: 180%;
+    left: -50%;
+    height: 400px;
+    flex: 1 1 auto;
 }
-.full{
-    width: 100%;
-}
+
 
 .chat-author {
     color: grey;
 }
 
-.chat-msg {
-    /* color: red; */
+.form {
+    position: absolute;
+    bottom:0;
+    width: 95%;
+    display:inline;
+}
+.scrollable {
+    overflow: auto;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 100%;
+    height: 300px;
 }

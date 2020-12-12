@@ -1,6 +1,7 @@
 import json
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
+from .mongoHelper import saveMessage
 
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
@@ -28,7 +29,8 @@ class ChatConsumer(WebsocketConsumer):
     def receive(self, text_data):
         print("receive", text_data)
         message = json.loads(text_data)
-        # message = text_data_json
+        
+        saveMessage(self.room_name, message)
 
         # Send message to room group
         async_to_sync(self.channel_layer.group_send)(

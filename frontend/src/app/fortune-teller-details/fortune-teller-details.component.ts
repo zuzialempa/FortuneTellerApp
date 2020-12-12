@@ -21,50 +21,69 @@ export class FortuneTellerDetailsComponent implements OnInit {
     tags: [],
     image: ""
   };
-  chat: Chat ;
+  chat: Chat;
 
   constructor(
-    private cookieService: CookieService, 
+    private cookieService: CookieService,
     private route: ActivatedRoute,
     private ftService: FortuneTellerService
-    ) {
-    // constructor(private socket: Socket) {
-      const ftId = this.route.snapshot.paramMap.get('id');
-      const userId = this.cookieService.get(ftId); //because ftId is not initialized yet
+  ) {
+    const ftId = this.route.snapshot.paramMap.get('id');
+    const userId = this.cookieService.get(ftId); //because ftId is not initialized yet
     this.chatActive = userId !== undefined && userId !== '';
-    this.chat = {
-      userId:userId,
-      ftId:ftId,
-      messages:[]
-    }
+    this.chat = { ftId, userId, messages: [] };
   }
 
   ngOnInit() {
     this.getFortuneTeller();
+    this.getChat();
   }
 
   getFortuneTeller(): void {
     let id = this.route.snapshot.paramMap.get('id');
     this.ftService.getFortuneTeller(id)
-      .subscribe(ft =>{ 
-        console.log("ft")
-        console.log(ft)
+      .subscribe(ft => {
         this.fortuneTeller = ft
       });
   }
+
+  getChat(): void {
+    const ftId = this.route.snapshot.paramMap.get('id');
+    const userId = this.cookieService.get(ftId); //because ftId is not initialized yet
+    this.ftService.getChat(ftId, userId)
+      .subscribe(chat => {
+        if (chat.userId) {
+          this.chat = chat
+          this.chat.messages = chat.messages.map(mess => {
+            if (mess.author === this.chat.userId) {
+              mess.author = "ty"
+            } else {
+              mess.author = "on"
+            }
+            return mess;
+          })
+        } else {
+          this.chat = {
+            userId: userId,
+            ftId: ftId,
+            messages: []
+          }
+        }
+      });
+  }
+
   activateChat() {
     const userId = short_uuid.generate();
     this.chat.userId = userId;
     this.cookieService.set(this.fortuneTeller.id, userId);
     this.chatActive = true;
-    console.log("userId-set-",userId)
   }
+  
   finnishChat() {
     console.log("finnishChat")
     this.cookieService.delete("userId");
     this.chatActive = false;
     const userId = this.cookieService.get(this.fortuneTeller.id);
-    console.log("userId-del-",userId)
   }
 
 }

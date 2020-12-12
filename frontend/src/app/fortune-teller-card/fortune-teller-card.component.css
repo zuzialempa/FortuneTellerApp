@@ -1,20 +1,4 @@
-.ftGrid {
-    top: 400px;
-}
-
 .ftImg {
-    max-height: 100px;
+    max-height: 150px;
     max-width: auto;
-}
-
-.ftCard {
-    max-height: 400px;
-}
-
-.ftAvailable {
-    color: green;
-}
-
-.ftDisabled {
-    color: red;
 }
