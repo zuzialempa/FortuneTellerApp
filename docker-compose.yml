@@ -9,6 +9,7 @@ services:
      - 27017
     volumes: 
       - ./database:/data/db
+    container_name: mongo
   redis:
     image: redis:5
     ports: 
@@ -17,3 +18,26 @@ services:
      - 6379
     volumes:
       - ./database:/data
+    container_name: redis
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - 8000:8000
+    links:
+      - mongo
+      - redis
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - "./backend:/code"
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    command: ["npm", "start"]
+    ports:
+      - 4200:4200
+      - 80:80
+    links:
+      - backend

@@ -1,5 +1,10 @@
 # FortuneTellerApp
 
+You can run application with docker, just run
+```
+docker-compose up --build
+```
+
 ## FrontEnd from angular
 
 ### Run frontend app:
@@ -15,6 +20,10 @@
 ```
 python -m pip install -U channels django pymongo channels_redis django-cors-headers channels_redis
 ```
+or use
+``` 
+pip install -r requirements.txt
+```
 
 ### Run server
 ```python manage.py runserver 8000```
@@ -25,7 +34,3 @@ python -m pip install -U channels django pymongo channels_redis django-cors-head
 ```docker run -p 6379:6379 -d redis:5```
 <!-- W mongo sa składowane dane -->
 ```docker run -p 27017:27017 -d mongo```
-
-Or use docker-compose tool, by calling `docker-compose up -d` in root directory of this project.
-
-To fill databases with sample data run `python manage.py migrate`. The you can try to be a fortune teller to login you can use one of sample accounts (logins are 'Sabrinka', 'Gabi', 'Sabi, 'Gabus' and all works with password 'test')

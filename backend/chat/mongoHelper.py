@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 import json
 
-client = MongoClient('mongodb://localhost:27017')
+client = MongoClient('mongodb://mongo:27017')
 db = client.admin
 db = client.fortuneTellersApp
 
