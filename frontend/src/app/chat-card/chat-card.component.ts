@@ -32,7 +32,11 @@ export class ChatCardComponent implements OnInit {
             (!this.isFT && message.author === this.chat.userId)) {
           message.author = "ty"
         } else {
-          message.author = "on"
+          if(this.isFT){
+            message.author = "klient"
+          } else {
+            message.author = "wróżka"
+          }
         }
         this.chat.messages.push(message)
       }

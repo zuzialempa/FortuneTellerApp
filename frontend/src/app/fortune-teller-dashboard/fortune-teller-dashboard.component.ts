@@ -31,7 +31,7 @@ export class FortuneTellerDashboardComponent implements OnInit {
       const { message } = JSON.parse(e.data);
       const item = this.chats.find(i => i.userId === message.userId);
       if (!item) {
-        message.author = "on"
+        message.author = "klient"
         this.chats.push({
           ftId: this.ftId,
           userId: message.userId,
@@ -50,7 +50,7 @@ export class FortuneTellerDashboardComponent implements OnInit {
             if (mess.author === chat.userId) {
               mess.author = "ty";
             } else {
-              mess.author = "on";
+              mess.author = "klient";
             }
             return mess;
           })

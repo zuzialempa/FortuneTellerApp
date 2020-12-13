@@ -1,10 +1,9 @@
 .chatCard {
-    width: 180%;
-    left: -50%;
-    height: 400px;
+    max-width: 600px;
+    min-width: 600px;
+    height: 500px;
     flex: 1 1 auto;
 }
-
 
 .chat-author {
     color: grey;

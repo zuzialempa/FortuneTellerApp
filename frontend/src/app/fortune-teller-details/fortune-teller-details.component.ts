@@ -58,7 +58,7 @@ export class FortuneTellerDetailsComponent implements OnInit {
             if (mess.author === this.chat.userId) {
               mess.author = "ty"
             } else {
-              mess.author = "on"
+              mess.author = "wróżka"
             }
             return mess;
           })
