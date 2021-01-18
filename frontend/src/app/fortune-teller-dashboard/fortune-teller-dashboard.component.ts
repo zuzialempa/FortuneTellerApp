@@ -32,7 +32,7 @@ export class FortuneTellerDashboardComponent implements OnInit {
       const item = this.chats.find(i => i.userId === message.userId);
       if (!item) {
         message.author = "klient"
-        this.chats.push({
+        this.chats.unshift({
           ftId: this.ftId,
           userId: message.userId,
           messages: [message]

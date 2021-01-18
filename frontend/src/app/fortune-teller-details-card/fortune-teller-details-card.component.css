@@ -1,5 +1,5 @@
 .ftImg {
-    margin: 1%;
+    margin: 5%;
     padding: 2%;
     max-width: auto;
 }
@@ -8,4 +8,7 @@
     margin: 1%;
     margin-top: 5%;
     margin-bottom:2%;
+}
+.mat-card-image {
+    margin: 0px;
 }

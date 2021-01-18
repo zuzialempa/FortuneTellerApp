@@ -2,7 +2,7 @@
 
 You can run application with docker, just run
 ```
-docker-compose up --build
+docker-compose up
 ```
 It will build images for backend, frontend and databases.
 
