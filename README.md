@@ -6,9 +6,7 @@ docker-compose up
 ```
 It will build images for backend, frontend and databases.
 
-Or you can try to run it locally:
-
-## FrontEnd from angular
+## Or you can try to run it locally:
 
 ### Run frontend app:
 1. Install dependencies with ```npm i```
