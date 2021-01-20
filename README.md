@@ -32,3 +32,7 @@ pip install -r requirements.txt
 
 ```docker run -p 6379:6379 -d redis:5```
 ```docker run -p 27017:27017 -d mongo```
+
+## Documentation
+Api description is in 
+[API.md](API.md)
